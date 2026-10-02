@@ -1,12 +1,27 @@
 <div class="app-shell">
 
+  <!-- TOP UTILITY BAR -->
+  <div class="topbar">
+    <ul>
+      <li><a href="#announcements">News &amp; Updates</a></li>
+      <li><a href="#services">Freedom of Information</a></li>
+    </ul>
+    <ul class="right">
+      <li><a href="#contact" onclick="openEmergency()">Emergency Hotlines</a></li>
+      <li><a href="#officials">Directory</a></li>
+      <li><a href="#contact">Careers</a></li>
+      <li><a href="https://www.gov.ph" target="_blank" rel="noopener">GOV.PH</a></li>
+    </ul>
+  </div>
+
   <!-- NAVIGATION -->
   <header class="navbar">
     <div class="brand">
-      <div class="brand-logo">B360</div>
-      <div>
-        <strong>Barangay360</strong>
-        <span>Digital Barangay Portal</span>
+      <div class="brand-logo">SEAL</div>
+      <div class="brand-text">
+        <em>Republic of the Philippines</em>
+        <strong>BARANGAY SAN ISIDRO</strong>
+        <em>Municipality of __________ · Province of __________</em>
       </div>
     </div>
 
@@ -30,43 +45,23 @@
   <!-- HERO -->
   <section class="hero" id="home">
 
+    <div class="hero-left">
+      <div class="seal-placeholder">B</div>
+      <div class="sglg">Seal of<br>Good Local<br>Governance</div>
+    </div>
+
     <div class="hero-content">
-      <div class="badge">OFFICIAL BARANGAY INFORMATION PORTAL</div>
-
-      <h1>
-        Welcome to<br>
-        <span>Barangay San Isidro</span>
-      </h1>
-
-      <p>
-        Your digital gateway to barangay services, announcements,
-        community programs, and important information.
-      </p>
+      <h1>“Ikaw, ako, tayong lahat para sa isang maunlad na barangay.”</h1>
 
       <div class="hero-buttons">
-        <button class="primary-btn" onclick="scrollToSection('services')">
-          Explore Services
-        </button>
-
-        <button class="secondary-btn" onclick="openRequestModal()">
-          Request a Service
-        </button>
+        <button class="primary-btn" onclick="scrollToSection('services')">Explore Services</button>
+        <button class="secondary-btn" onclick="openRequestModal()">Request a Service</button>
       </div>
     </div>
 
-    <div class="hero-card">
-      <div class="seal-placeholder">
-        B
-      </div>
-
-      <h3>Barangay San Isidro</h3>
-      <p>Municipality of __________</p>
-      <p>Province of __________</p>
-
-      <div class="office-status">
-        <span class="status-dot"></span>
-        Barangay Office Open
-      </div>
+    <div class="hero-officials">
+      <div class="official-slot"><div>Photo</div><strong>JUAN DELA CRUZ</strong><span>PUNONG BARANGAY</span></div>
+      <div class="official-slot"><div>Photo</div><strong>MARIA SANTOS</strong><span>BARANGAY KAGAWAD</span></div>
     </div>
 
   </section>
