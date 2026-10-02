@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap');
 
 :root {
-  --primary: #0ea5e9;
-  --primary-dark: #0369a1;
-  --primary-light: #e0f2fe;
-  --accent: #7dd3fc;
+  --primary: #4e2c1a;
+  --primary-dark: #331c10;
+  --primary-light: #fbeedd;
+  --accent: #f4b81a;
   --dark: #14201c;
   --text: #53605b;
-  --light: #f0f9ff;
+  --light: #fdf8f1;
   --white: #ffffff;
-  --border: #d6e8f3;
+  --border: #eadccb;
   --danger: #c62828;
 }
 
@@ -353,7 +353,7 @@ nav a:hover {
 
 .announcement-card.featured p,
 .announcement-card.featured small {
-  color: #e0f2fe;
+  color: #fbeedd;
 }
 
 .announcement-date {
@@ -470,7 +470,7 @@ nav a:hover {
 }
 
 .tracking-section .section-label {
-  color: #bae6fd;
+  color: #f6c85a;
 }
 
 .tracking-section h2 {
@@ -480,7 +480,7 @@ nav a:hover {
 }
 
 .tracking-section p {
-  color: #e0f2fe;
+  color: #fbeedd;
 }
 
 .tracking-form {
@@ -665,7 +665,7 @@ nav a:hover {
 /* FOOTER */
 
 footer {
-  background: #0c3b5a;
+  background: #2a1609;
   color: white;
   padding: 60px 8% 0;
 }
@@ -892,7 +892,7 @@ footer a:hover {
 }
 
 /* ===== MUNICIPAL-PORTAL STYLE ===== */
-:root { --topbar: #0284c7; }
+:root { --topbar: #331c10; }
 body { font-family: "Inter", "DM Sans", sans-serif; }
 
 .topbar {
@@ -916,7 +916,7 @@ body { font-family: "Inter", "DM Sans", sans-serif; }
 .brand-logo {
   width: 62px; height: 62px; border-radius: 50%;
   background: #fff; color: var(--primary);
-  border: 3px solid #bae6fd; font-size: 12px;
+  border: 3px solid #f6c85a; font-size: 12px;
 }
 .brand-text em {
   display: block; font-family: Georgia, "Times New Roman", serif;
@@ -925,18 +925,18 @@ body { font-family: "Inter", "DM Sans", sans-serif; }
 .brand-text strong { color: #fff; font-size: 19px; letter-spacing: .3px; }
 .brand span { color: inherit; }
 nav { gap: 22px; text-transform: uppercase; font-weight: 800; color: #fff; }
-nav a:hover { color: #0c3b5a; }
+nav a:hover { color: #2a1609; }
 .admin-btn { background: #fff; color: var(--primary-dark); }
-.admin-btn:hover { background: #0c3b5a; color: #fff; }
+.admin-btn:hover { background: #2a1609; color: #fff; }
 .menu-toggle { color: #fff; }
 
 .hero {
-  background: linear-gradient(90deg, #fff 0%, #f0f9ff 55%, #dbeefc 100%);
+  background: linear-gradient(90deg, #fff 0%, #fdf8f1 55%, #fbe6c8 100%);
   min-height: 480px; padding: 40px 3%; gap: 30px;
 }
 .hero-left { text-align: center; }
-.hero-left .seal-placeholder { width: 200px; height: 200px; font-size: 90px; margin: 0 auto 14px; border-color: #0284c7; }
-.sglg { font-family: "Plus Jakarta Sans"; font-weight: 800; color: #0c3b5a; line-height: 1.15; }
+.hero-left .seal-placeholder { width: 200px; height: 200px; font-size: 90px; margin: 0 auto 14px; border-color: #331c10; }
+.sglg { font-family: "Plus Jakarta Sans"; font-weight: 800; color: #2a1609; line-height: 1.15; }
 .hero-content { flex: 1; max-width: none; text-align: center; }
 .hero h1 {
   color: var(--primary-dark); font-weight: 800; letter-spacing: 0;
@@ -953,8 +953,8 @@ nav a:hover { color: #0c3b5a; }
 .official-slot span { color: var(--text); font-size: 10px; }
 
 .primary-btn, .admin-btn { border-radius: 8px; }
-.tracking-section { background: linear-gradient(135deg, #0284c7, #0ea5e9); }
-.tracking-section .primary-btn { background: #0c3b5a; }
+.tracking-section { background: linear-gradient(135deg, #331c10, #4e2c1a); }
+.tracking-section .primary-btn { background: #2a1609; }
 .tracking-form input { background: #fff; }
 
 @media (max-width: 900px) {
@@ -967,3 +967,19 @@ nav a:hover { color: #0c3b5a; }
   nav { top: 88px; background: var(--primary); border-bottom: none; }
   .topbar .right { display: none; }
 }
+
+
+/* ===== LOGO COLOR THEME ===== */
+.brand-seal { width: 66px; height: 66px; object-fit: contain; border-radius: 50%; background: #fff; }
+.hero-seal { width: 260px; height: 260px; object-fit: contain; display: block; filter: drop-shadow(0 10px 25px rgba(78,44,26,.25)); }
+.primary-btn { background: #ee7d22; color: #fff; }
+.primary-btn:hover { background: #d4651a; }
+.secondary-btn, .outline-btn { color: #4e2c1a; border-color: #4e2c1a; }
+.badge, .section-label, .category { color: #d9661a; }
+.tracking-section .section-label { color: #f6c85a; }
+.tracking-section .primary-btn { background: #ee7d22; }
+.topbar { background: #331c10; }
+.navbar { border-bottom: 4px solid #f4b81a; }
+.hero { background: linear-gradient(90deg, #fff 0%, #fdf8f1 55%, #fbe6c8 100%); }
+.hero h1 { color: #4e2c1a; }
+@media (max-width: 900px) { .hero-seal { width: 180px; height: 180px; margin: 0 auto; } }
