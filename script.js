@@ -605,3 +605,89 @@ function showAllAnnouncements() {
     </div>
   `);
 }
+
+// ORDINANCES & RESOLUTIONS
+// Sample records - replace with your barangay's actual documents.
+// "file" can be a PDF link, e.g. "documents/ordinance-2026-001.pdf"
+
+const ordinanceData = [
+  { type: "Ordinance", number: "Ordinance No. 2026-001", title: "Barangay Clean and Green Ordinance", date: "2026-01-15", status: "Approved", summary: "Regulates proper waste segregation and community clean-up activities within the barangay.", file: "" },
+  { type: "Ordinance", number: "Ordinance No. 2026-002", title: "Curfew for Minors Ordinance", date: "2026-03-10", status: "Approved", summary: "Sets curfew hours for minors and the corresponding parental responsibilities.", file: "" },
+  { type: "Ordinance", number: "Ordinance No. 2025-005", title: "Barangay Fishing and Coastal Protection Ordinance", date: "2025-08-22", status: "Approved", summary: "Protects coastal resources and sets guidelines for local fishing activities.", file: "" },
+  { type: "Resolution", number: "Resolution No. 2026-010", title: "Approving the 2026 Barangay Annual Investment Plan", date: "2026-02-05", status: "Approved", summary: "Approves the annual investment plan for barangay programs and projects.", file: "" },
+  { type: "Resolution", number: "Resolution No. 2026-014", title: "Authorizing the Punong Barangay to Enter into a Memorandum of Agreement", date: "2026-05-18", status: "Approved", summary: "Authorizes the Punong Barangay to sign a partnership agreement with the municipal government.", file: "" },
+  { type: "Resolution", number: "Resolution No. 2025-021", title: "Declaring Barangay Fiesta Week", date: "2025-11-12", status: "Approved", summary: "Declares the official dates and activities for the annual barangay fiesta.", file: "" }
+];
+
+let ordType = "All";
+
+function formatOrdDate(d) {
+  return new Date(d + "T00:00:00").toLocaleDateString("en-PH", { year: "numeric", month: "long", day: "numeric" });
+}
+
+function renderOrdinances() {
+  const q = document.getElementById("ordSearch").value.trim().toLowerCase();
+  const year = document.getElementById("ordYear").value;
+
+  const rows = ordinanceData
+    .map((o, i) => ({ ...o, i }))
+    .filter(o => (ordType === "All" || o.type === ordType)
+      && (year === "All" || o.date.startsWith(year))
+      && (o.title + " " + o.number).toLowerCase().includes(q))
+    .sort((a, b) => b.date.localeCompare(a.date));
+
+  const list = document.getElementById("ordList");
+
+  if (!rows.length) {
+    list.innerHTML = '<div class="ord-empty">No ordinances or resolutions found.</div>';
+    return;
+  }
+
+  list.innerHTML = rows.map(o => `
+    <div class="ord-item">
+      <span class="ord-badge ${o.type === "Resolution" ? "res" : ""}">${o.type.toUpperCase()}</span>
+      <div class="ord-info">
+        <strong>${o.number}</strong>
+        <h3>${o.title}</h3>
+        <small>Approved ${formatOrdDate(o.date)}</small>
+      </div>
+      <button class="ord-btn" onclick="openOrdinance(${o.i})">View</button>
+    </div>
+  `).join("");
+}
+
+function openOrdinance(i) {
+  const o = ordinanceData[i];
+  openModal(`
+    <span class="section-label">${o.type.toUpperCase()}</span>
+    <h2>${o.title}</h2>
+    <div class="ord-meta">
+      <div><b>NUMBER</b>${o.number}</div>
+      <div><b>DATE APPROVED</b>${formatOrdDate(o.date)}</div>
+      <div><b>STATUS</b>${o.status}</div>
+      <div><b>TYPE</b>${o.type}</div>
+    </div>
+    <p>${o.summary}</p>
+    ${o.file
+      ? `<a class="primary-btn" style="display:inline-block;margin-top:16px;" href="${o.file}" target="_blank" rel="noopener">Download Copy (PDF)</a>`
+      : `<p style="margin-top:16px;font-size:13px;color:#7a6a5d;">A copy may be requested at the Barangay Hall.</p>`}
+  `);
+}
+
+(function initOrdinances() {
+  const years = [...new Set(ordinanceData.map(o => o.date.slice(0, 4)))].sort().reverse();
+  document.getElementById("ordYear").innerHTML =
+    '<option value="All">All Years</option>' + years.map(y => `<option>${y}</option>`).join("");
+
+  document.getElementById("ordTabs").addEventListener("click", e => {
+    const b = e.target.closest(".ord-tab");
+    if (!b) return;
+    document.querySelectorAll(".ord-tab").forEach(t => t.classList.remove("active"));
+    b.classList.add("active");
+    ordType = b.dataset.type;
+    renderOrdinances();
+  });
+  document.getElementById("ordSearch").addEventListener("input", renderOrdinances);
+  document.getElementById("ordYear").addEventListener("change", renderOrdinances);
+  renderOrdinances();
+})();

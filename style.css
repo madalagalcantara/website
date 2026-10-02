@@ -983,3 +983,27 @@ nav a:hover { color: #2a1609; }
 .hero { background: linear-gradient(90deg, #fff 0%, #fdf8f1 55%, #fbe6c8 100%); }
 .hero h1 { color: #4e2c1a; }
 @media (max-width: 900px) { .hero-seal { width: 180px; height: 180px; margin: 0 auto; } }
+
+
+/* ===== ORDINANCES & RESOLUTIONS ===== */
+.ord-toolbar { display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:22px; }
+.ord-tabs { display:flex; gap:8px; }
+.ord-tab { border:1px solid var(--border,#eadccb); background:#fff; padding:9px 18px; border-radius:999px; font-weight:700; cursor:pointer; color:#4e2c1a; font-family:inherit; }
+.ord-tab.active { background:#4e2c1a; color:#fff; border-color:#4e2c1a; }
+.ord-filters { display:flex; gap:10px; flex-wrap:wrap; }
+.ord-filters input, .ord-filters select { padding:10px 14px; border:1px solid #eadccb; border-radius:10px; font-family:inherit; background:#fff; min-width:160px; }
+.ord-list { display:flex; flex-direction:column; gap:12px; }
+.ord-item { display:flex; align-items:center; gap:18px; background:#fff; border:1px solid #eadccb; border-radius:14px; padding:16px 20px; }
+.ord-badge { flex:none; min-width:92px; text-align:center; padding:6px 10px; border-radius:8px; font-size:11px; font-weight:800; letter-spacing:.5px; background:#fbeedd; color:#4e2c1a; }
+.ord-badge.res { background:#e8f4e2; color:#2f6b25; }
+.ord-info { flex:1; }
+.ord-info strong { display:block; font-size:12px; color:#d9661a; letter-spacing:.4px; }
+.ord-info h3 { font-size:16px; margin:2px 0 4px; }
+.ord-info small { color:#7a6a5d; }
+.ord-btn { border:none; background:#ee7d22; color:#fff; padding:9px 16px; border-radius:8px; font-weight:700; cursor:pointer; font-family:inherit; }
+.ord-btn:hover { background:#d4651a; }
+.ord-empty { text-align:center; padding:30px; color:#7a6a5d; background:#fff; border:1px dashed #eadccb; border-radius:14px; }
+.ord-meta { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:16px 0; }
+.ord-meta div { background:#fdf8f1; padding:10px 14px; border-radius:10px; font-size:13px; }
+.ord-meta b { display:block; font-size:11px; color:#d9661a; }
+@media (max-width:700px) { .ord-item { flex-wrap:wrap; } .ord-meta { grid-template-columns:1fr; } }
